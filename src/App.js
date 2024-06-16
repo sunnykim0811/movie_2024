@@ -2,8 +2,9 @@ import React from 'react';
 import Home from './routes/Home';
 import About from './routes/About';
 import './App.css';
-import { HashRouter, Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 
@@ -12,11 +13,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />  
-      <Routes>  
-        <Route path="/" exact={true} element={<Home />} />
-        <Route path="/about" element={<About />} />
+      <Switch>  
+      <Route path="/"  component={Home} />
+        <Route path="/about" component={About} />
         
-      </Routes>
+      </Switch>
     </BrowserRouter>
   );
 }
